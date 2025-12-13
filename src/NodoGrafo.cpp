@@ -9,7 +9,9 @@ bool NodoGrafo::es_directorio(){ return false; }
 
 int *NodoGrafo::lista_padres(){
     int n = padres -> size();
-    int* arr = new int[n];
+    int* arr;
+    if(n==0) { arr = new int[1]; return arr; }
+    arr = new int[n];
     for(int i=0;i<n;i++){
         arr[i] = (*padres)[i];
     }

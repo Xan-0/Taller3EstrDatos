@@ -1,4 +1,4 @@
-#include "NodoGrafo.h"
+#include "../include/NodoGrafo.h"
 
 NodoGrafo::NodoGrafo(int id, vector<int> *padres){
     this -> id = id;
@@ -21,3 +21,4 @@ int *NodoGrafo::lista_padres(){
 void NodoGrafo::set_padres(vector<int> *padres){ this -> padres = padres; }
 int NodoGrafo::getId(){ return id; }
 void NodoGrafo::setId(int id){ this -> id = id; }
+

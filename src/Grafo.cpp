@@ -10,21 +10,25 @@ void Grafo::set_arbolB(ArbolBPlus *arbol) { this -> arbol = arbol; }
 int calcular_espacio_ocupado(int id_directorio){
     int total;
     stack<int> s;
-    vector<int> visitados(0,false);
     
-    NodoGrafo *cursor = raiz;
-    int cursor_id = raiz -> get_id();
+    NodoGrafo *cursor;
+    int cursor_id;
+    s.push(id_directorio);
     
-    s.push(cursor_id);
-    
-    while(cursor -> es_directorio()){
-        cursor_id = s.pop();
+    while(!s.Empty()){
+        cursor_id = s.top(); s.pop();
+        cursor = arbol -> buscar_nodo_grafo(cursor_id);
         
+        if(!cursor -> es_directorio()) { total = total + cursor -> get_size(); continue; }
+        if(!cursor -> lista_hijos()) continue;
         
-        cursor = cursor -> lista_hijos();
+        int *cursor_hijos = cursor->lista_hijos();
+        
+        for(int i=0; i<sizeof(cursor_hijos);i++){
+            s.push(cursor_hijos[i]);
+        }
     }
     
-    
     return total;
-
 }
+

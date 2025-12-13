@@ -1,4 +1,5 @@
 #pragma once
+#include "NodoGrafo.h"
 
 class NodoDirectorio: public NodoGrafo {
 private:

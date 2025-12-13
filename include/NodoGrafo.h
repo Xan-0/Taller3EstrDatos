@@ -7,7 +7,7 @@ private:
     int id;
     vector<int> *padres;
 public:
-    NodoGrafo(int id, vector<int> padres);
+    NodoGrafo(int id, vector<int> *padres);
     bool es_directorio();
     
     int* lista_padres();

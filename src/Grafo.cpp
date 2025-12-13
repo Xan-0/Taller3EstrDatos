@@ -1,4 +1,4 @@
-#include "Grafo.h"
+#include "../include/Grafo.h"
 #include <stack>
 
 Grafo::Grafo(NodoGrafo *raiz, ArbolBPlus *arbol){ this -> raiz = raiz; this -> arbol = arbol; }
@@ -26,4 +26,5 @@ int calcular_espacio_ocupado(int id_directorio){
     
     
     return total;
+
 }

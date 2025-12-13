@@ -6,7 +6,9 @@ NodoDirectorio::NodoDirectorio(int id, vector<int> *padres, vector<int> *hijos) 
 
 int *NodoDirectorio::lista_hijos(){
     int n = hijos -> size();
-    int* arr = new int[n];
+    int *arr;
+    if(n==0) { arr = new int[1]; return arr; }
+    arr = new int[n];
     for(int i=0;i<n;i++){
         arr[i] = (*hijos)[i];
     }

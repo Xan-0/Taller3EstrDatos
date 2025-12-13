@@ -1,7 +1,6 @@
 #include "NodoArchivo.h"
 
-NodoArchivo::NodoArchivo(int id, vector<int> *padres, int size, int type){
-    NodoGrafo(id, padres);
+NodoArchivo::NodoArchivo(int id, vector<int> *padres, int size, int type) : NodoGrafo(id, padres){
     this -> size = size;
     this -> type = type;
 }

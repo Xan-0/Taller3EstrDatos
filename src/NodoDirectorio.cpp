@@ -1,4 +1,4 @@
-#include "../include/NodoDirectorio.h"
+#include "NodoDirectorio.h"
 
 NodoDirectorio::NodoDirectorio(int id, vector<int> *padres, vector<int> *hijos) : NodoGrafo(id, padres){
     this -> hijos = hijos;
@@ -6,13 +6,11 @@ NodoDirectorio::NodoDirectorio(int id, vector<int> *padres, vector<int> *hijos) 
 
 int *NodoDirectorio::lista_hijos(){
     int n = hijos -> size();
-    int *arr;
-    if(n==0) { arr = new int[1]; return arr; }
-    arr = new int[n];
+    if(n==0) { return nullptr; }
+    int *arr = new int[n];
     for(int i=0;i<n;i++){
         arr[i] = (*hijos)[i];
     }
     return arr;
 }
 void NodoDirectorio::set_hijos(vector<int> *hijos){ this -> hijos = hijos; }
-
